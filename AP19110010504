@@ -1,0 +1,36 @@
+write a c program to reverse a string using stack
+#include <stdio.h>  
+#include <string.h>  
+#define max 100  
+int top=-1;
+char str[max];
+int push(char x)
+    {
+        if(top == max-1){  
+        printf("str overflow");
+    }
+    else   
+        {
+            str[++top]=x; 
+        }
+    return 0;
+}  
+  
+int pop()
+{
+        printf("%c",str[top--]);  
+    return 0;
+}
+  
+int main()  
+{  
+   int i;  
+   printf("Enter the string");
+   scanf("%s",str);
+   for(i=0; i<strlen(str); i++)
+   push(str[i]);
+   for(i=0; i<strlen(str); i++)  
+   pop();
+   printf("=%s",str);
+   return 0;
+}
